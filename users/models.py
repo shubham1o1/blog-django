@@ -11,8 +11,8 @@ class Profile(models.Model):
         return f'{self.user.username} Profile'
 
     # Override save method of profile model to resize image
-    def save(self):
-        super().save() # to run
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs) # to run
 
         img = Image.open(self.image.path) #import Image from PIL and open the image
         
